@@ -51,6 +51,7 @@ function calcular_8h() {
     document.getElementById("potencia_resultado_8h").innerHTML = calcular_potencia();
     document.getElementById("consumo_8h").innerHTML = calcular_consumo_estable();
     let ime = Math.round(document.getElementById("impuesto_electrico").value * 100) / 100;
+    document.getElementById("ime_8h").innerHTML = ime;
     document.getElementById("alquiler_8h").innerHTML = calcular_alquiler();
     let resultado = calcular_potencia() + calcular_consumo_8h() + ime + calcular_alquiler();
     document.getElementById("precio_sin_iva_8h").innerHTML = Math.round(resultado * 100) / 100;
@@ -59,11 +60,13 @@ function calcular_8h() {
 }
 
 function calcular_ahorro() {
-    let precio_cliente = document.getElementById("precio_cliente").value;
-    let coste_estable = document.getElementById("precio_con_iva_estable").value;
-    let coste_8h = document.getElementById("precio_con_iva_8h").value;
+    let precio_cliente = Number(document.getElementById("precio_cliente").value);
+    let coste_estable = Number(document.getElementById("precio_con_iva_estable").innerHTML);
+    let coste_8h = Number(document.getElementById("precio_con_iva_8h").innerHTML);
+    console.log(precio_cliente, coste_estable, coste_8h);
     let ahorro_estable = precio_cliente - coste_estable;
     let ahorro_8h = precio_cliente - coste_8h;
+    console.log(precio_cliente, ahorro_estable, ahorro_8h);
     let ahorro_text = `ahorraria ${ahorro_estable} con el plan estable y ${ahorro_8h} con el de 8h`;
     document.getElementById("ahorro_text").innerHTML = ahorro_text;
 }
