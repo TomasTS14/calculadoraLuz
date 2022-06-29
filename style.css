@@ -1,0 +1,43 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 500px;
+}
+
+h1 {
+    background-color: aliceblue;
+}
+
+#calculadora {
+    background-color: aqua;
+
+}
+
+#calculadora>* {
+    margin: 1em;
+}
+
+input {
+    width: 3em;
+}
+
+#precio_cliente {
+    width: 8em;
+}
+
+#plan_estable {
+    background-color: orange;
+}
+
+#plan_8h {
+    background-color: green;
+}
+
+#ahorro {
+    height: 5em;
+    background-color: blue;
+    color: white;
+}

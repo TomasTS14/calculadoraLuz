@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="logic.js" defer></script>
+    <title>Plan Estable</title>
+</head>
+
+<body>
+    <h1>CALCULADORA PRECIO</h1>
+    <input type=number id="precio_cliente" placeholder="Precio cliente">
+    <div id="calculadora">
+        <form id="potencia_calculo">
+            <label for="potencia">Potencia: </label>
+            <input type="number" id="potencia" name="potencia">
+            <label for="potencia_precio"> * Precio potencia: </label>
+            <input type="number" id="potencia_precio" name="potencia_precio" value="0.10">
+            <label for="dias_facturados"> * Dias factura:</label>
+            <input type="number" id="dias_facturados" name="dias_facturados">
+        </form>
+        <form id="consumo_calculo">
+            <label for="kw_total">Kw total: </label>
+            <input type="number" id="kw_total" name="kw_total">
+            <label for="kw_precio_normal">* Precio Kw</label>
+            <input type=" number" id="kw_precio" name="kw_precio">
+            <label for="kw_precio_opcional">* Precio Kw opcional</label>
+            <input type=" number" id="kw_precio_opcional" name="kw_precio_opcional">
+            <label for="kw_precio_opcional2">* Precio Kw opcional2</label>
+            <input type=" number" id="kw_precio_opcional2" name="kw_precio_opcional2">
+        </form>
+        <form id="impuesto_electrico calculo">
+            <label for="impuesto_electrico">Impuesto electrico: </label>
+            <input type="number" id="impuesto_electrico" name="impuesto_electrico">
+        </form>
+        <form Id="alquiler_equipo">
+            <label for="alquiler_precio">Precio alquiler:</label>
+            <input type="number" id="alquiler_precio" name="alquiler_precio" value="0.7">
+            <label for="alquiler_meses">* Meses:</label>
+            <input type="number" id="alquiler_meses" name="alquiler_meses">
+        </form>
+        <button id="calcular_boton">Calcular</button>
+        <button id="ahorro_boton">Calcular ahorro</button>
+    </div>
+    <div id="plan_estable">
+        <h2>PLAN ESTABLE</h2>
+        Potencia <label id="potencia_resultado"></label>+<br>
+        Consumo <label id="consumo"></label>+<br>
+        IME <label id="ime"></label>+<br>
+        Alquiler equipo <label id="alquiler"></label><br>
+        <label>______________</label><br>
+        Precio sin iva: <label id="precio_sin_iva_estable"></label><br>
+        Precio con iva: <label id="precio_con_iva_estable"></label>
+
+    </div>
+    <div id="plan_8h">
+        <h2>PLAN 8h</h2>
+        Potencia <label id="potencia_resultado_8h"></label>+<br>
+        Consumo <label id="consumo_8h"></label>+<br>
+        IME <label id="ime"></label>+<br>
+        Alquiler equipo <label id="alquiler_8h"></label><br>
+        <label>______________</label><br>
+        Precio sin iva: <label id="precio_sin_iva_8h"></label><br>
+        Precio con iva: <label id="precio_con_iva_8h"></label>
+
+    </div>
+    <div id="ahorro">
+        <h2>AHORRO</h2>
+        <p id="ahorro_text"></p>
+    </div>
+
+</body>
+
+</html>
