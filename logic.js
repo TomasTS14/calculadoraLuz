@@ -8,6 +8,17 @@ function calcular_potencia() {
     return Math.round(resultado * 100) / 100;
 }
 
+const inputs = document.getElementsByClassName("kw_suma");
+function calcular_suma_kw() {
+    console.log("sumando");
+
+    let resultado = 0;
+    for (let i = 0; i < inputs.length; i++) {
+        resultado += Number(inputs[i].value);
+    }
+    document.getElementById("consumo_sum_resultado").innerHTML = resultado;
+}
+
 function calcular_consumo_estable() {
     let kw_total = document.getElementById("kw_total").value;
     let kw_precio = document.getElementById("kw_precio").value;
@@ -66,6 +77,8 @@ function calcular_ahorro() {
     console.log(precio_cliente, coste_estable, coste_8h);
     let ahorro_estable = precio_cliente - coste_estable;
     let ahorro_8h = precio_cliente - coste_8h;
+    ahorro_estable = Math.round(ahorro_estable * 100) / 100;
+    ahorro_8h = Math.round(ahorro_8h * 100) / 100;
     console.log(precio_cliente, ahorro_estable, ahorro_8h);
     let ahorro_text = `ahorraria ${ahorro_estable} con el plan estable y ${ahorro_8h} con el de 8h`;
     document.getElementById("ahorro_text").innerHTML = ahorro_text;
@@ -77,5 +90,10 @@ const boton_ahorro = document.getElementById("ahorro_boton");
 boton_calculo.addEventListener('click', calcular_estable);
 boton_calculo.addEventListener('click', calcular_8h);
 boton_ahorro.addEventListener('click', calcular_ahorro);
+
+for (let i = 0; i < inputs.length; i++) {
+
+    inputs[i].addEventListener('input', calcular_suma_kw);
+}
 
 
